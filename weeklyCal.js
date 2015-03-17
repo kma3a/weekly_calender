@@ -67,6 +67,10 @@ var workCal =  {
 		4: this.myCal.deleteEvent(getInput("What event would you like to delete?"),getInput("What day is that event on?"));
 		5: this.myCal.findEventsByName(getInput("What is the name of the event you would like to see?")); 
 		6: exit();
+	},
+	addEvent: function() {
+		var newEvent = new Event(this.getInput("What is the name of your event?"), this.getInput("What time is your event at?");
+		this.myCal.addEvent(newEvent, this.getInput("What day does this event is on?");
 	}
 
 }
