@@ -14,7 +14,21 @@ function Calender() {
 Calender.prototype.addEvent = function(event, day) {
 	this.weekEvents[day].push(event);
 }
-
+Calender.prototype.deleteEvent = function(eventName, day) {
+	var foundEvent = false;
+	this.weekEvents[day].forEach(function(event){
+		if (event.name === eventName) {
+			return foundEvent = event;
+		}
+	})
+	var eventIndex = this.weekEvents.indexOf(foundEvent);
+	if (eventIndex === -1) {
+		console.log(eventName + " was not found");
+	} else {
+		this.weekEvents.splice(eventIndex,1);
+		console.log( eventName + " has been removed from " + day);
+	}
+}
 Calender.prototype.findEventByName = function(eventName) {
 	var foundEvent = false;
 	for (var day in this.weekEvents) {
