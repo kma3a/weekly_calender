@@ -55,3 +55,10 @@ Calender.prototype.viewAllEvents = function() {
 	}
 }	
 
+var workCal =  {
+	myCal: new Calender(),
+	getInput: function(message) {
+		return sget(message).trim().toLowerCase();
+	}
+
+}
