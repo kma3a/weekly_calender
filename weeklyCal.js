@@ -27,7 +27,17 @@ Calender.prototype.findEventByName = function(eventName) {
 	return foundEvent;
 }
 Calender.prototype.viewEventsOnDay = function(day) {
+	console.log("On " + day + " there is:");
 	this.weekEvents[day].forEach(function(event) {
 		event.viewEvent();
 	})	
 }
+
+Calender.prototype.viewAllEvents = function() {
+	for (var day in this.weekEvents) {
+		console.log("On " + day + " there is:");
+		this.weekEvents[day].forEach(function(event) {
+			event.viewEvent();
+		}
+	}
+}	
