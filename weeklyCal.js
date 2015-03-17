@@ -1,5 +1,6 @@
-function Event(name) {
+function Event(name, time) {
 	this.name = name;
+	this.time = time;
 }
 
 function Calender() {
