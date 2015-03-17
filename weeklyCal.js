@@ -3,6 +3,10 @@ function Event(name, time) {
 	this.time = time;
 }
 
+Event.prototype.viewEvents = function() {
+	console.log(this.name + " is at " + this.time);	
+}
+
 function Calender() {
 	this.weekEvents= { monday:[], tuesday: [], wednesday: [], thursday: [], friday: [], saturday: [], sunday: []}
 }
