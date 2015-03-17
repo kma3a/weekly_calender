@@ -59,6 +59,14 @@ var workCal =  {
 	myCal: new Calender(),
 	getInput: function(message) {
 		return sget(message).trim().toLowerCase();
+	},
+	menu: {
+		1: this.myCal.viewAllEvents();
+		2: this.myCal.viewEventsOnDay(getInput("What day would you like to view? "));
+		3: this.addEvent();
+		4: this.myCal.deleteEvent(getInput("What event would you like to delete?"),getInput("What day is that event on?"));
+		5: this.myCal.findEventsByName(getInput("What is the name of the event you would like to see?")); 
+		6: exit();
 	}
 
 }
