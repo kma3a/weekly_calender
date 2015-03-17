@@ -35,9 +35,6 @@ Calender.prototype.viewEventsOnDay = function(day) {
 
 Calender.prototype.viewAllEvents = function() {
 	for (var day in this.weekEvents) {
-		console.log("On " + day + " there is:");
-		this.weekEvents[day].forEach(function(event) {
-			event.viewEvent();
-		}
+		this.viewEventsOnDay(day);
 	}
 }	
