@@ -1,3 +1,5 @@
+var sget = require('sget');
+
 function Event(name, time) {
 	this.name = name;
 	this.time = time;
@@ -52,3 +54,4 @@ Calender.prototype.viewAllEvents = function() {
 		this.viewEventsOnDay(day);
 	}
 }	
+
