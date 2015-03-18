@@ -101,7 +101,7 @@ WorkCal.prototype.startGame = function() {
 	
 				break;
 			case "6": 
-				this,exit();
+				this.exit();
 				break;
 			default:
 				console.log("Invalid Input try again");
