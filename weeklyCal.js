@@ -14,7 +14,11 @@ function Calender() {
 }
 
 Calender.prototype.addEvent = function(event, day) {
-	this.weekEvents[day].push(event);
+	if(!this.weekEvents[day]) {
+		console.log("day is not found");
+	} else {
+		this.weekEvents[day].push(event);
+	}
 }
 Calender.prototype.deleteEvent = function(eventName, day) {
 	var foundEvent = false;
@@ -43,11 +47,15 @@ Calender.prototype.findEventByName = function(eventName) {
 	return foundEvent;
 }
 Calender.prototype.viewEventsOnDay = function(day) {
-	console.log("On " + day + " there is:");
-	this.weekEvents[day].forEach(function(event) {
-		event.viewEvents();
-	})	
-}
+	if (!this.weekEvents[day]) {
+		console.log("day is not found");
+	} else {
+		console.log("On " + day + " there is:");
+		this.weekEvents[day].forEach(function(event) {
+			event.viewEvents();
+		})	
+	}
+}	
 
 Calender.prototype.viewAllEvents = function() {
 	for (var day in this.weekEvents) {
