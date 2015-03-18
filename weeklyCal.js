@@ -37,14 +37,20 @@ Calender.prototype.deleteEvent = function(eventName, day) {
 }
 Calender.prototype.findEventByName = function(eventName) {
 	var foundEvent = false;
+	var foundDay;
 	for (var day in this.weekEvents) {
 		this.weekEvents[day].forEach(function(event) {
 			if(event.name === eventName) {
+				foundDay = day
 				return foundEvent = event;
 			}
 		})
 	}
-	return foundEvent;
+	if (foundEvent) {
+		console.log("On "+ foundDay+ " there is " +foundEvent.viewEvents());
+	} else {
+		console.log( eventName + " was not found");
+	}
 }
 Calender.prototype.viewEventsOnDay = function(day) {
 	if (!this.weekEvents[day]) {
@@ -95,7 +101,7 @@ WorkCal.prototype.startGame = function() {
 				this.startGame();
 				break;
 			case "5": 
-				this.myCal.findEventsByName(getInput("What is the name of the event you would like to see?"));
+				this.myCal.findEventByName(getInput("What is the name of the event you would like to see?"));
 				this.startGame();
 				break;
 	
