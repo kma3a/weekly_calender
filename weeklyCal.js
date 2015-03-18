@@ -71,6 +71,10 @@ var workCal =  {
 	addEvent: function() {
 		var newEvent = new Event(this.getInput("What is the name of your event?"), this.getInput("What time is your event at?");
 		this.myCal.addEvent(newEvent, this.getInput("What day does this event is on?");
+	},
+	startGame: function() {
+		console.log("1- view all events\n2- view events on a day\n3- create and add event to a day\n4- remove event from day\n5- find events by name\6- exit the calender");
+		this.menu(this.getInput("What would you like to do?);
 	}
 
 }
