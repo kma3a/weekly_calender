@@ -75,6 +75,8 @@ var workCal =  {
 	startGame: function() {
 		console.log("1- view all events\n2- view events on a day\n3- create and add event to a day\n4- remove event from day\n5- find events by name\6- exit the calender");
 		this.menu(this.getInput("What would you like to do?);
+	},
+	exit: function() {
+		console.log("Thanks for playing");
 	}
-
 }
