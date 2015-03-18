@@ -27,11 +27,11 @@ Calender.prototype.deleteEvent = function(eventName, day) {
 			return foundEvent = event;
 		}
 	})
-	var eventIndex = this.weekEvents.indexOf(foundEvent);
+	var eventIndex = this.weekEvents[day].indexOf(foundEvent);
 	if (eventIndex === -1) {
 		console.log(eventName + " was not found");
 	} else {
-		this.weekEvents.splice(eventIndex,1);
+		this.weekEvents[day].splice(eventIndex,1);
 		console.log( eventName + " has been removed from " + day);
 	}
 }
